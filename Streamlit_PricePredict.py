@@ -55,11 +55,11 @@ with st.expander('요소 시각화'):
         st.pyplot(plt)
 
 # 요소 선택
-bedrooms = st.number_input(label='침실의 개수를 입력하세요.',
+bedrooms = st.number_input(label=':green[침실]의 개수를 입력하세요.',
                 min_value=0,
                 max_value=5)
 
-bathrooms = st.number_input(label='욕실의 개수를 입력하세요.',
+bathrooms = st.number_input(label=':green[욕실]의 개수를 입력하세요.',
                 min_value=0,
                 max_value=5)
 
@@ -85,41 +85,41 @@ def update_input(key):
 # 1. 주택 면적
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.slider('주택의 면적을 정해주세요. (단위: ft²)', 250, 4800, step=1, key='area', on_change=update_input, args=('area',))
+    st.slider('주택의 :green[면적]을 정해주세요. (단위: ft²)', 250, 4800, step=1, key='area', on_change=update_input, args=('area',))
 with col2:
     st.number_input(' ', min_value=250, max_value=4800, step=1, key='area_input', on_change=update_slider, args=('area',))
-st.write(f"선택한 주택 면적은 {st.session_state.area} ft²입니다.")
+st.write(f"선택한 주택 :green[면적]은 {st.session_state.area} ft²입니다.")
 
 # 2. 지하철역까지 걸리는 시간
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.slider('지하철역까지 걸리는 시간(단위: 분)', 0, 43, step=1, key='subway_time', on_change=update_input, args=('subway_time',))
+    st.slider('지하철역까지 걸리는 :green[시간](단위: 분)', 0, 43, step=1, key='subway_time', on_change=update_input, args=('subway_time',))
 with col2:
     st.number_input(' ', min_value=0, max_value=43, step=1, key='subway_time_input', on_change=update_slider, args=('subway_time',))
-st.write(f"지하철역까지 걸리는 시간은 {st.session_state.subway_time}분입니다.")
+st.write(f"지하철역까지 걸리는 :green[시간]은 {st.session_state.subway_time}분입니다.")
 
 # 3. 주택의 층 수
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.slider('주택의 층 수를 정해주세요.', 0.0, 83.0, step=0.5, key='floor', on_change=update_input, args=('floor',))
+    st.slider('주택의 :green[층 수]를 정해주세요.', 0.0, 83.0, step=0.5, key='floor', on_change=update_input, args=('floor',))
 with col2:
     st.number_input(' ', min_value=0.0, max_value=83.0, step=0.5, key='floor_input', on_change=update_slider, args=('floor',))
-st.write(f"선택한 주택 층 수는 {st.session_state.floor}층입니다.")
+st.write(f"선택한 주택 :green[층 수]는 {st.session_state.floor}층입니다.")
 
 # 4. 건물의 연식
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.slider('건물의 연식을 정해주세요.', 0, 180, step=1, key='building_age', on_change=update_input, args=('building_age',))
+    st.slider('건물의 :green[연식]을 정해주세요.', 0, 180, step=1, key='building_age', on_change=update_input, args=('building_age',))
 with col2:
     st.number_input(' ', min_value=0, max_value=180, step=1, key='building_age_input', on_change=update_slider, args=('building_age',))
-st.write(f"건물의 연식은 {st.session_state.building_age}년입니다.")
+st.write(f"건물의 :green[연식]은 {st.session_state.building_age}년입니다.")
 
-no_fee = st.selectbox('중계 수수료를 지불할 의향이 있으신가요?', ('Yes','No'), index=1)
+no_fee = st.selectbox(':green[중계 수수료]를 지불할 의향이 있으신가요?', ('Yes','No'), index=1)
 
 #################### 옵션 선택 구현 #######################
 
 # 질문 표시
-st.write('건물에 원하는 옵션을 선택해주세요.')
+st.write('건물에 원하는 :green[옵션]을 선택해주세요.')
 
 # 체크박스 생성
 roofdeck = st.checkbox('루프덱(옥상 테라스)')
